@@ -1,0 +1,68 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+ul,ol{list-style: none}
+a{color:inherit;text-decoration: none;}
+.content-wrapper{
+    display: flex;
+    >aside{
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        >.newSong{
+            height:50px;
+            width:200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom:1px solid #999;
+  
+        }
+        >.newSong.active{
+            background: #ddd;
+        }
+        >.songList{
+            flex-grow:1;
+            >ul{
+                
+                >li{
+                    padding :10px ;
+                    border-bottom :1px solid #999;
+                }
+                >li.active{
+                    background: #ddd;
+                }
+            }
+        }
+        >.dragFile{
+            justify-content: flex-end;
+            >#container{
+                height:100px;
+                width:200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border:1px dashed #999 ;
+                border-radius: 5px;
+                flex-direction: column;
+                >#pickfiles{
+                    margin:0 auto;
+                    padding: 11px;
+                }
+            }
+        }
+    }
+    >main{
+        width:100%;
+        padding-left:20px;
+        background: #ddd;
+        >.form-wrapper{
+             .row{
+                 display: flex;
+                 align-items: center;
+                 padding:2px;
+                 >input[type="text"]{
+                    padding:2px 7px;
+                 }
+             }
+        }
+    }
+}
