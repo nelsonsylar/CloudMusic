@@ -9,7 +9,8 @@
     "postcss-preset-env": "^6.5.0",
     "qiniu": "^7.2.1",
     "qiniu-js": "^1.0.24",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
