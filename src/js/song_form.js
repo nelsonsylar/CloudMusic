@@ -60,10 +60,7 @@ export default (function song_form(){
             this.model=model
             this.view.render(this.model.data)
             this.bindEvents()
-            window.eventhub.on("upload",(data)=>{
-                this.model.data=data
-                this.view.render(this.model.data)
-            })
+            this.eventHub()
         },
         bindEvents(){
             $(this.view.el).on('submit','form',(event)=>{
@@ -81,6 +78,25 @@ export default (function song_form(){
                     window.eventhub.emit("create",mydata)
                 })
 
+            })
+        },
+        eventHub(){
+            window.eventhub.on("upload",(data)=>{
+                this.model.data=data
+                this.view.render(this.model.data)
+            })
+            window.eventhub.on("select",(data)=>{
+                let {mySong,myId}=data
+                let modelData
+                for(let i=0;i<mySong.length;i++){
+                    if(mySong[i].id===myId)
+                    modelData=mySong[i]
+                }
+                this.model.data=modelData
+                this.view.render(this.model.data)
+            })
+            window.eventhub.on("new",(data)=>{
+                this.view.render({})
             })
         },
         reset(){

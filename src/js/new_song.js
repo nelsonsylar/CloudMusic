@@ -22,13 +22,16 @@ export default (function new_song(){
             this.model=model
             this.view.render(this.model.data)
             this.active()
+            this.bindEvents()
+            this.eventHub()
+        },
+        eventHub(){
             window.eventhub.on('new',(data)=>{//这里把new事件存入eventhub,
                 this.active()
             })
             window.eventhub.on('select',(data)=>{//这里把select事件存入eventhub,其他模块要用
                 this.deactive()
             })
-            this.bindEvents()
         },
         bindEvents(){
             $(this.view.el).on('click',()=>{
@@ -37,6 +40,7 @@ export default (function new_song(){
         },
         active(){
             $(this.view.el).addClass('active')
+
         },
         deactive(){
             $(this.view.el).removeClass('active')
