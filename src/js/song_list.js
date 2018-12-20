@@ -68,7 +68,7 @@ export default (function song_list(){
             window.eventhub.on("select",(data)=>{
                 this.active()
             })
-            window.eventhub.on("upload",(data)=>{
+            window.eventhub.on("new",(data)=>{
                 this.view.clearActive()
             })
         },

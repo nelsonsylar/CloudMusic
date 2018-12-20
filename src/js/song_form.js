@@ -81,10 +81,6 @@ export default (function song_form(){
             })
         },
         eventHub(){
-            window.eventhub.on("upload",(data)=>{
-                this.model.data=data
-                this.view.render(this.model.data)
-            })
             window.eventhub.on("select",(data)=>{
                 let {mySong,myId}=data
                 let modelData
@@ -94,10 +90,15 @@ export default (function song_form(){
                 }
                 this.model.data=modelData
                 this.view.render(this.model.data)
+                $(this.view.el).find("h1").text("编辑歌曲")
             })
             window.eventhub.on("new",(data)=>{
-                this.view.render({})
+                if(data){
+                    this.model.data=data
+                    this.view.render(this.model.data)
+                }else{ this.view.render({})} 
             })
+
         },
         reset(){
             this.view.render({})

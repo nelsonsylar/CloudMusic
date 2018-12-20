@@ -101,7 +101,7 @@ export default (function upload_songs(){
 
                            $('#tip').text('上传完毕')
    
-                           window.eventhub.emit("upload",{
+                           window.eventhub.emit("new",{
                                song:response.key,
                                url:sourceLink
                            })
