@@ -65,7 +65,9 @@ export default (function song_list(){
                 this.model.data.activeLi=myId
                 console.log('activeli')
                 console.log(this.model.data.activeLi)
-                window.eventhub.emit('select',JSON.parse(JSON.stringify({mySong,myId})))
+                let mydata=JSON.parse(JSON.stringify({mySong,myId}))
+                console.log(mydata)
+                window.eventhub.emit('select',mydata)
                 window.eventhub.on("new",()=>{
                     this.view.clearActive()
                 })
@@ -75,7 +77,8 @@ export default (function song_list(){
         eventHub(){
             window.eventhub.on("create",(data)=>{
                 this.model.data.song.push(data)
-                this.view.render(this.model.data)
+                this.model.data.activeLi=''
+                this.view.render(this.model.data)    
             })
             window.eventhub.on("select",(data)=>{
                 this.view.active()

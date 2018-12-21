@@ -72,8 +72,6 @@ export default (function song_form(){
             this.view=view
             this.model=model
             this.view.render(this.model.data)
-            console.log('init id')
-            console.log(this.model.data.id)
             this.bindEvents()
             this.eventHub() 
         },
@@ -98,9 +96,11 @@ export default (function song_form(){
                         let string=JSON.stringify(this.model.data)
                         let mydata=JSON.parse(string)
                         window.eventhub.emit("create",mydata)
-                    })
-                    this.model.data.id=null
-                }    
+                        console.log(mydata)
+                        this.model.data.id=""   
+                    })  
+                } 
+                
             })
         },
         eventHub(){
