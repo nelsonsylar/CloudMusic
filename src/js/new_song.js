@@ -32,6 +32,10 @@ export default (function new_song(){
             window.eventhub.on('select',(data)=>{//这里把select事件存入eventhub,其他模块要用
                 this.deactive()
             })
+            // window.eventhub.on('submit',(data)=>{
+            //     console.log("click")
+            //     $(this.view.el).trigger("click");
+            // })
         },
         bindEvents(){
             $(this.view.el).on('click',()=>{

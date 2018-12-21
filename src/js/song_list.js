@@ -8,9 +8,13 @@ export default (function song_list(){
         render(data){
             $(this.el).html(this.template)
             $(this.el).find('ul').empty()
-            let {song}=data
+            let {song,activeLi}=data
             let lilist=song.map((value)=>{
-               return $('<li></li>').text(value.song).attr("data-id",value.id)
+                let $li=$('<li></li>').text(value.song).attr("data-id",value.id)
+                if(value.id===activeLi){
+                    $li.addClass("active")
+                }
+                return $li
             })
             lilist.map((lidom)=>{
                 $(this.el).find('ul').append(lidom)
@@ -21,11 +25,15 @@ export default (function song_list(){
         },
         clearActive(){
             $(this.el).find('.active').removeClass("active")
-        }
+        },
+        active(li){
+            $(li).addClass('active').siblings(".active").removeClass('active')
+        },
     }
     var model={
         data:{
-            song:[]
+            song:[],
+            activeLi:""
         },
         getSong(){
             var query = new AV.Query('playlist');
@@ -51,13 +59,17 @@ export default (function song_list(){
         },
         bindEvents(){
             $(this.view.el).on("click","li",(e)=>{
-                this.active(e.currentTarget)
+                this.view.active(e.currentTarget)
                 let mySong=this.model.data.song
                 let myId=e.currentTarget.getAttribute("data-id")
-                window.eventhub.emit('select',{mySong,myId})
+                this.model.data.activeLi=myId
+                console.log('activeli')
+                console.log(this.model.data.activeLi)
+                window.eventhub.emit('select',JSON.parse(JSON.stringify({mySong,myId})))
                 window.eventhub.on("new",()=>{
                     this.view.clearActive()
                 })
+                
             })
         },
         eventHub(){
@@ -66,10 +78,20 @@ export default (function song_list(){
                 this.view.render(this.model.data)
             })
             window.eventhub.on("select",(data)=>{
-                this.active()
+                this.view.active()
             })
             window.eventhub.on("new",(data)=>{
                 this.view.clearActive()
+            })
+            window.eventhub.on("update",(data)=>{
+                let songs=this.model.data.song
+                for(let i=0;i<songs.length;i++){
+                    if(songs[i].id===data.id){
+                        songs[i]=data
+                        this.view.render(this.model.data)
+                        break
+                    }
+                }
             })
         },
         getSongInfo(){
@@ -78,9 +100,7 @@ export default (function song_list(){
             })
 
         },
-        active(li){
-            $(li).addClass('active').siblings(".active").removeClass('active')
-        },
+
     }
     controller.init(view,model)
 })()

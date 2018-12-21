@@ -8,7 +8,7 @@ a{color:inherit;text-decoration: none;}
         display: flex;
         flex-direction: column;
         >.newSong{
-            height:50px;
+            min-height:50px;
             width:200px;
             display: flex;
             align-items: center;
@@ -23,11 +23,14 @@ a{color:inherit;text-decoration: none;}
         }
         >.songList{
             flex-grow:1;
-            >ul{
-                
+            >ul{    
+                max-height: 794px;
+                overflow:scroll;
                 >li{
                     padding :10px ;
                     border-bottom :1px solid #999;
+                    max-width: 200px;
+                    overflow:hidden;
                 }
                 >li:hover{
                     cursor: pointer;
