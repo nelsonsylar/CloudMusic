@@ -4,7 +4,7 @@ import song_form from './song_form';
 import upload_songs from "./upload_songs";
 import new_song from './new_song'
 import song_list from './song_list'
-import '../css/default.scss'
+import '../../css/admin/default.scss'
 
 
 

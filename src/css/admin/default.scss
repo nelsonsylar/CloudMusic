@@ -25,7 +25,9 @@ a{color:inherit;text-decoration: none;}
             flex-grow:1;
             >ul{    
                 max-height: 794px;
-                overflow:scroll;
+                overflow-x:hidden;
+                overflow-y:auto;
+                
                 >li{
                     padding :10px ;
                     border-bottom :1px solid #999;

@@ -1,11 +1,17 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/app.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+  entry: {
+    admin:'./src/js/admin/app.js',
+    app:'./src/js/app/index.js'
   },
+ 
+  output: {
+    path: __dirname + "/dist/",
+    filename: 'js/[name].js',
+    publicPath: '/',
+},
+
   mode: 'development',
  
   module: {
@@ -21,21 +27,12 @@ module.exports = {
         }  
       },
       {
-        test: /\.(jpg|gif|svg)$/,
+        test: /\.(jpg|gif|svg|png)$/,
         loader: 'file-loader',
         options: {
           name: 'images/[name].[ext]'
-      }
-      },
-      {
-        test: /\.(png)$/,//这里为了区分只写png
-        loader: 'url-loader',
-        options: {
-            name: './images/[name].[ext]',
-            limit: 18192
         }
-    },
-
+      },
       {
         test: /\.scss$/,
         use: [
