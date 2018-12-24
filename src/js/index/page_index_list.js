@@ -25,7 +25,7 @@ export default  (function page_index_list(){
                 let $li=$(this.template
                     .replace("{{song}}",song.song)
                     .replace("{{singer}}",song.singer)
-                    .replace("{{url}}",song.id)
+                    .replace("{{url}}",`./app.html?id=${song.id}`)
                 )
                 $(this.el).find('ul').append($li)
             })

@@ -142,6 +142,18 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 
 /***/ }),
 
+/***/ "./src/js/admin/av.js":
+/*!****************************!*\
+  !*** ./src/js/admin/av.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function av_init() {\n  var APP_ID = 'hecbtpohmI9c098rarsJ1Kqb-gzGzoHsz';\n  var APP_KEY = 'xpSViR1zaxHetHbfXotcPdkL';\n  AV.init({\n    appId: APP_ID,\n    appKey: APP_KEY\n  });\n})());\n\n//# sourceURL=webpack:///./src/js/admin/av.js?");
+
+/***/ }),
+
 /***/ "./src/js/app/app.js":
 /*!***************************!*\
   !*** ./src/js/app/app.js ***!
@@ -150,7 +162,19 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/app/default.scss */ \"./src/css/app/default.scss\");\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/js/app/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/app/default.scss */ \"./src/css/app/default.scss\");\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _admin_av__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../admin/av */ \"./src/js/admin/av.js\");\n/* harmony import */ var _play__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./play */ \"./src/js/app/play.js\");\n\n\n\n\n//# sourceURL=webpack:///./src/js/app/app.js?");
+
+/***/ }),
+
+/***/ "./src/js/app/play.js":
+/*!****************************!*\
+  !*** ./src/js/app/play.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function play() {\n  var view = {\n    el: \".player\",\n    template: \"\\n        <audio src=\\\"{{url}}\\\" controls></audio>\\n        <button id=play>play</button>\\n        <button id=\\\"pause\\\">pause</button>\\n        \",\n    render: function render(data) {\n      var $content = $(this.template.replace('{{url}}', data.url));\n      $(this.el).html($content);\n    }\n  };\n  var model = {\n    data: {},\n    getSong: function getSong(id) {\n      var _this = this;\n\n      var query = new AV.Query('playlist');\n      return query.get(id).then(function (song) {\n        Object.assign(_this.data, _objectSpread({\n          id: song.id\n        }, song.attributes));\n        return song;\n      }, function (error) {// 异常处理\n      });\n    }\n  };\n  var controller = {\n    init: function init(view, model) {\n      var _this2 = this;\n\n      this.view = view;\n      this.model = model;\n      var id = this.getId();\n      this.model.getSong(id).then(function () {\n        _this2.view.render(_this2.model.data);\n      });\n      this.bindEvents();\n    },\n    getId: function getId() {\n      var id = window.location.search;\n\n      if (id.indexOf(\"?\") === 0) {\n        id = id.substr(1);\n      }\n\n      id = id.split('&').filter(function (a) {\n        return a;\n      });\n      var newId;\n\n      for (var i = 0; i < id.length; i++) {\n        var base = id[i].split('=');\n        var key = base[0];\n        var value = base[1];\n\n        if (key === 'id') {\n          newId = value;\n          break;\n        }\n      }\n\n      return newId;\n    },\n    bindEvents: function bindEvents() {\n      var _this3 = this;\n\n      $(this.view.el).on('click', 'button#play', function () {\n        console.log(1);\n\n        _this3.play();\n      });\n      $(this.view.el).on('click', 'button#pause', function () {\n        _this3.pause();\n      });\n    },\n    play: function play() {\n      console.log(this.a);\n      $(this.view.el).find(\"audio\")[0].play();\n    },\n    pause: function pause() {\n      $(this.view.el).find(\"audio\")[0].pause();\n    }\n  };\n  controller.init(view, model);\n})());\n\n//# sourceURL=webpack:///./src/js/app/play.js?");
 
 /***/ })
 
