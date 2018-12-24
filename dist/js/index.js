@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/app/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/app/default.scss":
-/*!*************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js!./src/css/app/default.scss ***!
-  \*************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/index/default.scss":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js!./src/css/index/default.scss ***!
+  \***************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/css/app/default.scss?./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"*{margin:0;padding:0;box-sizing:border-box}ol,ul{list-style:none}a{color:inherit;text-decoration:none}body>.topNavBar{position:fixed;z-index:1}body>.topNavBar>nav{display:flex;align-items:center;justify-content:space-between;background:#d03b37;min-height:64px;width:100vw}body>.topNavBar>nav>.nav-logo{padding-left:10px}body>.topNavBar>nav>.nav-logo .topsvg{width:142px;height:25px}body>.topNavBar>nav>.nav-button{margin-right:10px;border:1px solid hsla(0,0%,100%,.5);height:30px;border-radius:15px;width:82px;text-align:center;line-height:27px}body>.topNavBar>nav>.nav-button>span{color:#fff}body>.topNavBar>.tabs{height:40px;background:#fff;line-height:40px;border-bottom:1px solid #ccc}body>.topNavBar>.tabs>ul{display:flex;align-items:center;justify-content:space-around}body>.topNavBar>.tabs>ul>li{font-size:15px}body>.topNavBar>.tabs>ul>li:after{content:\\\"\\\";display:none;border:1px solid #d03b37;margin-top:-2px;margin-right:-4px;margin-left:-4px}body>.topNavBar>.tabs>ul>li.active:after{display:block}body>.topNavBar>.tabs>ul>li.active{color:#d03b37}body>main>.divideLine{height:104px}body>main>section>ul>li{display:none}body>main>section>ul>li .songNav{line-height:16px;height:50px;padding:20px 0}body>main>section>ul>li .songNav>p{border-left:2px solid #d03b37;padding:0 8px}body>main>section>ul>li .songCloset>ul{display:flex;justify-content:space-between;flex-wrap:wrap}body>main>section>ul>li .songCloset>ul>li{width:32.8%;margin:8px 0}body>main>section>ul>li .songCloset>ul>li>img{width:100%}body>main>section>ul>li .songCloset>ul>li>p{padding:0 6px;font-size:14px}body>main>section>ul>li .latestSongs{line-height:16px;height:50px;padding:20px 0}body>main>section>ul>li .latestSongs p{border-left:2px solid #d03b37;padding:0 8px;font-size:17px}body>main>section>ul>li .songList li{padding:10px 0;margin-left:10px;border-bottom:1px solid #e2e2e3;position:relative}body>main>section>ul>li .songList li h3{font-size:17px;font-weight:400}body>main>section>ul>li .songList li p{color:#888;font-size:12px}body>main>section>ul>li .songList li p #icon-sq{fill:#fe672e;width:1em;height:1em}body>main>section>ul>li .songList li a{position:absolute;right:10px;top:20px}body>main>section>ul>li .songList li a #icon-play{fill:#aaa;width:22px;height:22px}body>main>section>ul>li.active{display:block}body>main>footer .footer-Wrapper{background:url(https://i.loli.net/2017/08/25/599f862b9c98d.png) no-repeat;background-size:100% 100%;text-align:center;padding-top:42px;height:181px}body>main>footer .footer-Wrapper .logosvg{height:44px;width:230px;padding-bottom:10px}body>main>footer .footer-Wrapper .footer-button{border:1px solid #d03b37;height:42px;width:246px;border-radius:26px;text-align:center;line-height:42px;color:#d03b37;margin:0 auto}body>main>footer .footer-Wrapper .companyInfo{padding-top:10px;font-size:12px;color:#888;-webkit-transform:scale(.75);transform:scale(.75)}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/css/index/default.scss?./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -131,26 +131,86 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
-/***/ "./src/css/app/default.scss":
-/*!**********************************!*\
-  !*** ./src/css/app/default.scss ***!
-  \**********************************/
+/***/ "./src/css/index/default.scss":
+/*!************************************!*\
+  !*** ./src/css/index/default.scss ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--7-1!../../../node_modules/postcss-loader/src!../../../node_modules/sass-loader/lib/loader.js!./default.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/app/default.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/app/default.scss?");
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--7-1!../../../node_modules/postcss-loader/src!../../../node_modules/sass-loader/lib/loader.js!./default.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/lib/loader.js!./src/css/index/default.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/css/index/default.scss?");
 
 /***/ }),
 
-/***/ "./src/js/app/app.js":
-/*!***************************!*\
-  !*** ./src/js/app/app.js ***!
-  \***************************/
+/***/ "./src/js/admin/event-hub.js":
+/*!***********************************!*\
+  !*** ./src/js/admin/event-hub.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function event_hub() {\n  //这里可以与addEventListenner作对比\n  //有了eventhub,不同模块之间就能相互响应\n  window.eventhub = {\n    events: {//这里写各种事件对象,事件对象为内的内容为数组,里面包含方法\n      //如xxx.addEventListenner('on',function(){...})\n      //再比如on:[]\n    },\n    //事件订阅,即存相应事件的相应方法,当调用emit时,最终还是会带on执行\n    on: function on(eventName, fn) {\n      if (this.events[eventName] === undefined) {\n        this.events[eventName] = [];\n      }\n\n      this.events[eventName].push(fn);\n    },\n    //事件发布,即读取相应事件的相应方法\n    emit: function emit(eventName, data) {\n      for (var key in this.events) {\n        if (key === eventName) {\n          var fnlist = this.events[key];\n          fnlist.map(function (fn) {\n            fn(data);\n          });\n        }\n      }\n    }\n  };\n})());\n\n//# sourceURL=webpack:///./src/js/admin/event-hub.js?");
+
+/***/ }),
+
+/***/ "./src/js/index/index.js":
+/*!*******************************!*\
+  !*** ./src/js/index/index.js ***!
+  \*******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/app/default.scss */ \"./src/css/app/default.scss\");\n/* harmony import */ var _css_app_default_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_default_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/js/app/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_default_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/index/default.scss */ \"./src/css/index/default.scss\");\n/* harmony import */ var _css_index_default_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_default_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _admin_event_hub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../admin/event-hub */ \"./src/js/admin/event-hub.js\");\n/* harmony import */ var _page_tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page_tab */ \"./src/js/index/page_tab.js\");\n/* harmony import */ var _page_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page_index */ \"./src/js/index/page_index.js\");\n/* harmony import */ var _page_second__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./page_second */ \"./src/js/index/page_second.js\");\n/* harmony import */ var _page_third__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./page_third */ \"./src/js/index/page_third.js\");\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/js/index/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/index/page_index.js":
+/*!************************************!*\
+  !*** ./src/js/index/page_index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function page_index() {\n  var view = {\n    el: \".tabIndex\",\n    show: function show() {\n      $(this.el).addClass('active');\n    },\n    hide: function hide() {\n      $(this.el).removeClass('active');\n    }\n  };\n  var model = {};\n  var controller = {\n    init: function init(view, model) {\n      this.view = view;\n      this.model = model;\n      this.eventHub();\n    },\n    eventHub: function eventHub() {\n      var _this = this;\n\n      window.eventhub.on('selectTabs', function (tabs) {\n        if (tabs === 'first') {\n          _this.view.show();\n        } else {\n          _this.view.hide();\n        }\n      });\n    }\n  };\n  controller.init(view, model);\n})());\n\n//# sourceURL=webpack:///./src/js/index/page_index.js?");
+
+/***/ }),
+
+/***/ "./src/js/index/page_second.js":
+/*!*************************************!*\
+  !*** ./src/js/index/page_second.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function page_second() {\n  var view = {\n    el: \".tabSecond\",\n    show: function show() {\n      console.log('show');\n      console.log($(this.el));\n      $(this.el).addClass('active');\n    },\n    hide: function hide() {\n      $(this.el).removeClass('active');\n    }\n  };\n  var model = {};\n  var controller = {\n    init: function init(view, model) {\n      this.view = view;\n      this.model = model;\n      this.eventHub();\n    },\n    eventHub: function eventHub() {\n      var _this = this;\n\n      window.eventhub.on('selectTabs', function (tabs) {\n        if (tabs === 'second') {\n          _this.view.show();\n\n          console.log(1);\n        } else {\n          _this.view.hide();\n        }\n      });\n    }\n  };\n  controller.init(view, model);\n})());\n\n//# sourceURL=webpack:///./src/js/index/page_second.js?");
+
+/***/ }),
+
+/***/ "./src/js/index/page_tab.js":
+/*!**********************************!*\
+  !*** ./src/js/index/page_tab.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function page_index() {\n  var view = {\n    el: '.tabs'\n  };\n  var model = {};\n  var controller = {\n    init: function init(view, model) {\n      this.view = view;\n      this.model = model;\n      this.bindEvents();\n    },\n    bindEvents: function bindEvents() {\n      var _this = this;\n\n      $(this.view.el).find('ul').on('click', 'li', function (e) {\n        var $li = $(e.currentTarget);\n        var tabs = $li.attr('data-tabs');\n\n        _this.active($li);\n\n        window.eventhub.emit('selectTabs', tabs);\n      });\n    },\n    active: function active($li) {\n      $li.addClass('active').siblings('.active').removeClass('active');\n    }\n  };\n  controller.init(view, model);\n}).call());\n\n//# sourceURL=webpack:///./src/js/index/page_tab.js?");
+
+/***/ }),
+
+/***/ "./src/js/index/page_third.js":
+/*!************************************!*\
+  !*** ./src/js/index/page_third.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ((function page_third() {\n  var view = {\n    el: \".tabThird\",\n    show: function show() {\n      $(this.el).addClass('active');\n    },\n    hide: function hide() {\n      $(this.el).removeClass('active');\n    }\n  };\n  var model = {};\n  var controller = {\n    init: function init(view, model) {\n      this.view = view;\n      this.model = model;\n      this.eventHub();\n    },\n    eventHub: function eventHub() {\n      var _this = this;\n\n      window.eventhub.on('selectTabs', function (tabs) {\n        if (tabs === 'third') {\n          _this.view.show();\n        } else {\n          _this.view.hide();\n        }\n      });\n    }\n  };\n  controller.init(view, model);\n})());\n\n//# sourceURL=webpack:///./src/js/index/page_third.js?");
 
 /***/ })
 

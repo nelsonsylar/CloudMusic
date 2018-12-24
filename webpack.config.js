@@ -2,8 +2,9 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    admin:'./src/js/admin/app.js',
-    app:'./src/js/app/index.js'
+    admin:'./src/js/admin/admin.js',
+    index:'./src/js/index/index.js',
+    app:'./src/js/app/app.js'
   },
  
   output: {

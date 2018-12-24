@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/admin/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/admin/admin.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -197,15 +197,15 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 
 /***/ }),
 
-/***/ "./src/js/admin/app.js":
-/*!*****************************!*\
-  !*** ./src/js/admin/app.js ***!
-  \*****************************/
+/***/ "./src/js/admin/admin.js":
+/*!*******************************!*\
+  !*** ./src/js/admin/admin.js ***!
+  \*******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _av__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./av */ \"./src/js/admin/av.js\");\n/* harmony import */ var _event_hub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./event-hub */ \"./src/js/admin/event-hub.js\");\n/* harmony import */ var _song_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./song_form */ \"./src/js/admin/song_form.js\");\n/* harmony import */ var _upload_songs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./upload_songs */ \"./src/js/admin/upload_songs.js\");\n/* harmony import */ var _new_song__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./new_song */ \"./src/js/admin/new_song.js\");\n/* harmony import */ var _song_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./song_list */ \"./src/js/admin/song_list.js\");\n/* harmony import */ var _css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../css/admin/default.scss */ \"./src/css/admin/default.scss\");\n/* harmony import */ var _css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/js/admin/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _av__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./av */ \"./src/js/admin/av.js\");\n/* harmony import */ var _event_hub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./event-hub */ \"./src/js/admin/event-hub.js\");\n/* harmony import */ var _song_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./song_form */ \"./src/js/admin/song_form.js\");\n/* harmony import */ var _upload_songs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./upload_songs */ \"./src/js/admin/upload_songs.js\");\n/* harmony import */ var _new_song__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./new_song */ \"./src/js/admin/new_song.js\");\n/* harmony import */ var _song_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./song_list */ \"./src/js/admin/song_list.js\");\n/* harmony import */ var _css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../css/admin/default.scss */ \"./src/css/admin/default.scss\");\n/* harmony import */ var _css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_admin_default_scss__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/js/admin/admin.js?");
 
 /***/ }),
 
