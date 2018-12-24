@@ -85,6 +85,7 @@ export default (function upload_songs(){
                     'UploadProgress': function(up, file) {
                            // 每个文件上传时,处理相关的事情
                            $('#tip').text('正在上传')
+                           $('.loading').addClass('active')
                     },
                     'FileUploaded': function(up, file, info) {
                            // 每个文件上传成功后,处理相关的事情
@@ -105,7 +106,7 @@ export default (function upload_songs(){
                                song:response.key,
                                url:sourceLink
                            })
-
+                           $('.loading').removeClass('active')
                     },
                     'Error': function(up, err, errTip) {
                            //上传出错时,处理相关的事情
