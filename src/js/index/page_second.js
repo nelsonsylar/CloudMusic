@@ -2,8 +2,6 @@ export default (function page_second(){
     let view={
         el:`.tabSecond`,
         show(){
-            console.log('show')
-            console.log($(this.el))
             $(this.el).addClass('active')
         },
         hide(){
@@ -21,7 +19,6 @@ export default (function page_second(){
             window.eventhub.on('selectTabs',(tabs)=>{
                 if(tabs==='second'){
                     this.view.show()
-                    console.log(1)
                 }else{
                     this.view.hide()
                 }
