@@ -6,10 +6,10 @@ export default (function play(){
         <button id=play>play</button>
         <button id="pause">pause</button>
         `,
-        render(data){
-            let $content=$(this.template.replace('{{url}}',data.url))
-            $(this.el).html($content)
-        }
+        // render(data){
+        //     let $content=$(this.template.replace('{{url}}',data.url))
+        //     $(this.el).html($content)
+        // }
     }
     let model={
         data:{},
@@ -30,7 +30,7 @@ export default (function play(){
             
             let id =this.getId()
             this.model.getSong(id).then(()=>{
-                this.view.render(this.model.data)
+                // this.view.render(this.model.data)
             })
             this.bindEvents()
         },
