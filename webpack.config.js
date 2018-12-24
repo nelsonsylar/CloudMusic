@@ -34,6 +34,14 @@ module.exports = {
         }
       },
       {
+        test: /\.(jpg|gif|svg|png)$/,
+        loader: 'url-loader',
+        options: {
+            name: './images/[name].[ext]',
+            limit: 18192
+        }
+    },
+      {
         test: /\.scss$/,
         use: [
             "style-loader", // creates style nodes from JS strings

@@ -13,8 +13,10 @@ body{
             width:100vw;
             >.nav-logo{
                 padding-left: 10px;
-                height:25px;
-                width:142px;
+                .topsvg{
+                    width:142px;
+                    height:25px;
+                }
             }
             >.nav-button{
                 margin-right:10px;
@@ -39,7 +41,7 @@ body{
                 align-items: center;
                 justify-content: space-around;
                 >li{
-
+                    font-size:15px;
                 }
                 >li::after{
                     content:"";
@@ -53,12 +55,124 @@ body{
                 >li.active::after{
                     display:block
                 }
+                >li.active{
+                    color:rgb(208,59,55);
+                }
             }
         }
     }
     >main{
         >.divideLine{
-            // padding:
+            height:104px;
+        }
+        >section{
+            >ul{
+                >li{
+                    display: none;
+                    .songNav{
+                        line-height: 16px;
+                        height:50px;
+                        padding:20px 0;
+                        >p{
+                            border-left: 2px solid rgb(208,59,55);
+                            padding:0 8px;
+                        }
+                    }
+                    .songCloset{
+                        >ul{
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            >li{
+                                width:32.8%;
+                                margin:8px 0;
+                                >img{
+                                    width: 100%;
+                                }
+                                >p{
+                                    padding:0 6px;
+                                    font-size: 14px
+                                }
+                            }
+                        }       
+                    }
+                    .latestSongs{
+                        line-height: 16px;
+                        height:50px;
+                        padding:20px 0;
+                        p{
+                            border-left: 2px solid rgb(208,59,55);
+                            padding:0 8px;
+                            font-size:17px;
+                        }
+                    }
+                    .songList{
+                        li{
+                            padding:10px 0px;
+                            margin-left:10px;
+                            border-bottom:1px solid #E2E2E3;
+                            position: relative;
+                            h3{
+                                font-size: 17px;
+                                font-weight:normal;
+                            }
+                            p{
+                                color:#888;
+                                font-size: 12px;
+                                #icon-sq{
+                                    fill:#FE672E;
+                                    width: 1em;
+                                    height:1em;
+                                }     
+                            }
+                            a{  
+                                position: absolute;
+                                right:10px;
+                                top:20px;
+                                #icon-play{
+                                    fill:#AAA;
+                                    width:22px;
+                                    height:22px;
+                                }
+                            }
+                        }
+                    }
+                }
+                >li.active{
+                    display: block;
+                }       
+            }
+        }
+        >footer{
+            .footer-Wrapper{
+                background: url(https://i.loli.net/2017/08/25/599f862b9c98d.png) no-repeat;
+                background-size:100%100%;
+                text-align: center;
+                padding-top:42px;
+                height:181px;
+                .logosvg{
+                    height:44px;
+                    width: 230px;
+                    padding-bottom:10px;
+                }
+                .footer-button{
+                    border:1px solid rgb(208,59,55);
+                    height:42px;
+                    width:246px;
+                    border-radius:26px;
+                    text-align: center;
+                    line-height:42px;
+                    color:rgb(208,59,55);
+                    margin:0 auto;
+                    
+                }
+                .companyInfo{
+                    padding-top:10px;
+                    font-size: 12px;
+                    color: #888;
+                    transform: scale(0.75);//chrome最小只能显示12px,这里让显示10px;
+                }
+            }
         }
     }
 }
