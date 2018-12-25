@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.player {
+  width: 100vw;
+  height: 100vh; }
+  .player .nav {
+    height: 10.11994vh;
+    width: 100%;
+    border: 1px solid red; }
+  .player .discWrapper {
+    height: 40.47976vh;
+    width: 100%;
+    border: 1px solid blue; }
+  .player .lyricsWrapper {
+    height: 39.46777vh;
+    width: 100%;
+    border: 1px solid #ffc400; }
+  .player .buttonWrapper {
+    height: 9.89505vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    .player .buttonWrapper button {
+      width: 38.4vw;
+      height: 5.09745vh;
+      border: 1px solid #d03a36;
+      border-radius: 2.54873vh; }
+    .player .buttonWrapper #open {
+      color: #d03a36;
+      outline: none;
+      background: transparent; }
+    .player .buttonWrapper #download {
+      background: #d03a36;
+      color: white;
+      outline: none; }
+
+.player::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url(/images/timg.jpg) no-repeat center;
+  background-size: cover;
+  filter: blur(10px); }

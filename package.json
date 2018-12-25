@@ -9,6 +9,7 @@
     "postcss-preset-env": "^6.5.0",
     "qiniu": "^7.2.1",
     "qiniu-js": "^1.0.24",
+    "url-loader": "^1.1.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
@@ -17,6 +18,7 @@
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
@@ -26,9 +28,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    
     "build": "webpack --mode production",
-    "dev":"npx webpack --watch"
+    "dev": "npx webpack --watch"
   },
   "keywords": [],
   "author": "",

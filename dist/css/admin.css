@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul, ol {
+  list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.loading {
+  position: fixed;
+  background: black;
+  opacity: 0.2;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; }
+  .loading .loadingAnimation {
+    border: 1px solid #666;
+    border-radius: 50%;
+    width: 1px;
+    height: 1px;
+    background: #666;
+    animation: loadingAnim 0.8s linear alternate-reverse infinite; }
+
+@keyframes loadingAnim {
+  from {
+    width: 1px;
+    height: 1px; }
+  to {
+    width: 100px;
+    height: 100px; } }
+
+.loading.active {
+  display: flex; }
+
+.content-wrapper {
+  display: flex; }
+  .content-wrapper > aside {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; }
+    .content-wrapper > aside > .newSong {
+      min-height: 50px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #999; }
+    .content-wrapper > aside > .newSong:hover {
+      cursor: pointer; }
+    .content-wrapper > aside > .newSong.active {
+      background: #ddd; }
+    .content-wrapper > aside > .songList {
+      flex-grow: 1; }
+      .content-wrapper > aside > .songList > ul {
+        max-height: 794px;
+        overflow-x: hidden;
+        overflow-y: auto; }
+        .content-wrapper > aside > .songList > ul > li {
+          padding: 10px;
+          border-bottom: 1px solid #999;
+          max-width: 200px;
+          overflow: hidden; }
+        .content-wrapper > aside > .songList > ul > li:hover {
+          cursor: pointer; }
+        .content-wrapper > aside > .songList > ul > li.active {
+          background: #ddd; }
+    .content-wrapper > aside > .dragFile {
+      justify-content: flex-end; }
+      .content-wrapper > aside > .dragFile > #container {
+        height: 100px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px dashed #999;
+        border-radius: 5px;
+        flex-direction: column; }
+        .content-wrapper > aside > .dragFile > #container > #pickfiles {
+          margin: 0 auto;
+          padding: 11px; }
+    .content-wrapper > aside > .dragFile:hover {
+      cursor: pointer; }
+  .content-wrapper > main {
+    width: 100%;
+    padding-left: 20px;
+    background: #ddd; }
+    .content-wrapper > main > .form-wrapper .row {
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      font-family: Arial, Helvetica, sans-serif; }
+      .content-wrapper > main > .form-wrapper .row > input[type=text] {
+        padding: 2px 7px;
+        height: 24px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none; }
+      .content-wrapper > main > .form-wrapper .row > input[type=submit] {
+        padding: 2px;
+        height: 36px;
+        width: 40px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none; }

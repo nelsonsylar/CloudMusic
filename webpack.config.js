@@ -1,5 +1,5 @@
 const path = require('path');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     admin:'./src/js/admin/admin.js',
@@ -17,6 +17,13 @@ module.exports = {
  
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use:ExtractTextPlugin.extract({
+            fallback:"style-loader",
+            use:"css-loader"
+        })
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -41,16 +48,21 @@ module.exports = {
             name: './images/[name].[ext]',
             limit: 18192
         }
-    },
+      },
       {
         test: /\.scss$/,
-        use: [
-            "style-loader", // creates style nodes from JS strings
-            { loader: 'css-loader', options: { importLoaders: 1 } },
-            'postcss-loader',
-            "sass-loader" // compiles Sass to CSS, using Node Sass by default
-        ]
-      },    
+        use:ExtractTextPlugin.extract({
+            fallback:"style-loader",
+            use:[{
+                loader:"css-loader"
+            },{
+                loader:"sass-loader"
+            }]
+        })
+      },
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('css/[name].css')
+  ]
 };
