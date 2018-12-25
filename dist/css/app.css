@@ -12,29 +12,110 @@ a {
 
 .player {
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  z-index: 1; }
   .player .nav {
-    height: 10.11994vh;
-    width: 100%;
-    border: 1px solid red; }
+    height: 67.5px;
+    width: 100%; }
+    .player .nav > .logo {
+      position: absolute;
+      margin: 10px;
+      height: 20px;
+      width: 100px; }
+      .player .nav > .logo .topsvg {
+        height: 20px;
+        width: 100px; }
+    .player .nav > .pointer {
+      margin: auto;
+      height: 128.44px;
+      width: 90px;
+      z-index: 2;
+      position: relative; }
+      .player .nav > .pointer > img {
+        height: 128.44px;
+        width: 90px; }
   .player .discWrapper {
-    height: 40.47976vh;
+    height: 270px;
     width: 100%;
-    border: 1px solid blue; }
+    position: relative; }
+    .player .discWrapper .disc_light {
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+      width: 270px;
+      height: 270px;
+      position: absolute;
+      border: 1px solid transparent;
+      border-radius: 50%; }
+      .player .discWrapper .disc_light > img {
+        width: 270px;
+        height: 270px; }
+      .player .discWrapper .disc_light .disc {
+        width: 270px;
+        height: 270px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid transparent;
+        border-radius: 50%; }
+        .player .discWrapper .disc_light .disc > img {
+          width: 270px;
+          height: 270px; }
+        .player .discWrapper .disc_light .disc .disc_cover {
+          position: absolute;
+          left: 19%;
+          top: 19%;
+          background: red;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          width: 168.88px;
+          height: 168.88px; }
+          .player .discWrapper .disc_light .disc .disc_cover > img {
+            width: 168.88px;
+            height: 168.88px; }
+          .player .discWrapper .disc_light .disc .disc_cover > .playbutton {
+            position: absolute;
+            left: 33%;
+            top: 30%; }
+            .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .play {
+              width: 57.5px;
+              height: 57.5px; }
+              .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .play > img {
+                width: 57.5px;
+                height: 57.5px; }
+            .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .pause {
+              display: none;
+              position: absolute;
+              width: 57.5px;
+              height: 57.5px; }
+              .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .pause > img {
+                width: 57.5px;
+                height: 57.5px; }
+          .player .discWrapper .disc_light .disc .disc_cover > .playbutton.active > .pause {
+            display: block; }
+          .player .discWrapper .disc_light .disc .disc_cover > .playbutton.active > .play {
+            display: none; }
   .player .lyricsWrapper {
-    height: 39.46777vh;
+    height: 263.25px;
     width: 100%;
-    border: 1px solid #ffc400; }
+    color: white;
+    text-align: center; }
+    .player .lyricsWrapper h4 {
+      margin: 10px; }
+    .player .lyricsWrapper h6 {
+      margin: 5px; }
   .player .buttonWrapper {
-    height: 9.89505vh;
+    height: calc(100% - 601px);
     display: flex;
     align-items: center;
     justify-content: space-around; }
     .player .buttonWrapper button {
-      width: 38.4vw;
-      height: 5.09745vh;
+      width: 144px;
+      height: 34px;
       border: 1px solid #d03a36;
-      border-radius: 2.54873vh; }
+      border-radius: 17px; }
     .player .buttonWrapper #open {
       color: #d03a36;
       outline: none;
@@ -51,6 +132,7 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  background: transparent url(/images/timg.jpg) no-repeat center;
-  background-size: cover;
-  filter: blur(10px); }
+  background: transparent url("http://imgsrc.baidu.com/forum/pic/item/eb7f49d9f2d3572c5b01793f8813632760d0c3a5.jpg") center repeat-y;
+  filter: blur(10px);
+  background-size: 100%;
+  z-index: -1; }
