@@ -10,10 +10,17 @@ a {
   color: inherit;
   text-decoration: none; }
 
+@keyframes recycle {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
 .player {
   width: 100vw;
   height: 100vh;
-  z-index: 1; }
+  z-index: 1;
+  text-align: center; }
   .player .nav {
     height: 67.5px;
     width: 100%; }
@@ -34,10 +41,36 @@ a {
       .player .nav > .pointer > img {
         height: 128.44px;
         width: 90px; }
+      .player .nav > .pointer > .playbutton {
+        position: absolute;
+        top: 174px;
+        left: 19px;
+        z-index: 2; }
+        .player .nav > .pointer > .playbutton > .play {
+          width: 57.5px;
+          height: 57.5px; }
+          .player .nav > .pointer > .playbutton > .play > img {
+            width: 57.5px;
+            height: 57.5px; }
+        .player .nav > .pointer > .playbutton > .pause {
+          display: none;
+          position: absolute;
+          width: 57.5px;
+          height: 57.5px; }
+          .player .nav > .pointer > .playbutton > .pause > img {
+            width: 57.5px;
+            height: 57.5px; }
+      .player .nav > .pointer > .playbutton.active > .play {
+        display: none; }
+      .player .nav > .pointer > .playbutton.active > .pause {
+        display: block; }
   .player .discWrapper {
+    margin: 0 auto;
     height: 270px;
-    width: 100%;
-    position: relative; }
+    width: 270px;
+    position: relative;
+    animation: recycle 20s infinite linear;
+    animation-play-state: paused; }
     .player .discWrapper .disc_light {
       left: 0px;
       right: 0px;
@@ -65,38 +98,19 @@ a {
           height: 270px; }
         .player .discWrapper .disc_light .disc .disc_cover {
           position: absolute;
-          left: 19%;
-          top: 19%;
-          background: red;
+          left: 18%;
+          top: 18%;
+          background: transparent;
           border: 1px solid transparent;
           border-radius: 50%;
-          width: 168.88px;
-          height: 168.88px; }
+          width: 175.88px;
+          height: 175.88px;
+          overflow: hidden; }
           .player .discWrapper .disc_light .disc .disc_cover > img {
-            width: 168.88px;
-            height: 168.88px; }
-          .player .discWrapper .disc_light .disc .disc_cover > .playbutton {
-            position: absolute;
-            left: 33%;
-            top: 30%; }
-            .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .play {
-              width: 57.5px;
-              height: 57.5px; }
-              .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .play > img {
-                width: 57.5px;
-                height: 57.5px; }
-            .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .pause {
-              display: none;
-              position: absolute;
-              width: 57.5px;
-              height: 57.5px; }
-              .player .discWrapper .disc_light .disc .disc_cover > .playbutton > .pause > img {
-                width: 57.5px;
-                height: 57.5px; }
-          .player .discWrapper .disc_light .disc .disc_cover > .playbutton.active > .pause {
-            display: block; }
-          .player .discWrapper .disc_light .disc .disc_cover > .playbutton.active > .play {
-            display: none; }
+            width: 179.88px;
+            height: 179.88px; }
+  .player .discWrapper.active {
+    animation-play-state: running; }
   .player .lyricsWrapper {
     height: 263.25px;
     width: 100%;
@@ -105,7 +119,10 @@ a {
     .player .lyricsWrapper h4 {
       margin: 10px; }
     .player .lyricsWrapper h6 {
-      margin: 5px; }
+      margin: 10px; }
+    .player .lyricsWrapper .lyrics {
+      height: 120px;
+      overflow: hidden; }
   .player .buttonWrapper {
     height: calc(100% - 601px);
     display: flex;
@@ -115,7 +132,8 @@ a {
       width: 144px;
       height: 34px;
       border: 1px solid #d03a36;
-      border-radius: 17px; }
+      border-radius: 17px;
+      margin-bottom: 10px; }
     .player .buttonWrapper #open {
       color: #d03a36;
       outline: none;
@@ -132,7 +150,7 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  background: transparent url("http://imgsrc.baidu.com/forum/pic/item/eb7f49d9f2d3572c5b01793f8813632760d0c3a5.jpg") center repeat-y;
+  background: transparent url("https://i.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg") center no-repeat;
   filter: blur(10px);
-  background-size: 100%;
+  background-size: cover;
   z-index: -1; }

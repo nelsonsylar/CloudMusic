@@ -3,11 +3,19 @@ ol,ul{list-style: none}
 a{color:inherit;text-decoration: none;}
 $designWidth :375;
 $designHeight :667;
-
+@keyframes recycle{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(359deg)
+    }
+}
 .player{
     width:100vw;
     height:100vh;
     z-index: 1;
+    text-align: center;
     
     .nav{
         height: 67.5px;
@@ -31,14 +39,49 @@ $designHeight :667;
             >img{
                 height:128.44px;
                 width:90px;
-                
+            }
+            
+            >.playbutton{
+                position: absolute;
+                top:174px;
+                left:19px;
+                z-index: 2;
+                >.play{    
+                    width:57.5px;
+                    height:57.5px;
+                    >img{
+                        width:57.5px;
+                        height:57.5px;
+                    }
+                }
+                >.pause{
+                    display: none;
+                    position: absolute;
+                    width:57.5px;
+                    height:57.5px;
+                    >img{
+                        width:57.5px;
+                        height:57.5px;
+                    }
+                }   
+            }
+            >.playbutton.active{
+                >.play{
+                    display: none;
+                }
+                >.pause{
+                    display: block;
+                }
             }
         }
     }
     .discWrapper{
+        margin:0 auto;
         height:270px;
-        width:100%;
+        width:270px;
         position: relative;
+        animation: recycle 20s infinite linear ;
+        animation-play-state: paused;
         .disc_light{
                 left:0px;
                 right: 0px;
@@ -68,64 +111,43 @@ $designHeight :667;
                 }
                 .disc_cover{
                     position: absolute;
-                    left:19%;
-                    top:19%;
-                    background: red;
+                    left:18%;
+                    top:18%;
+                    background: transparent;
                     border:1px solid transparent;
                     border-radius: 50%;
-                    width:168.88px;
-                    height:168.88px;
+                    width:175.88px;
+                    height:175.88px;
+                    overflow: hidden;
                     >img{
-                        width:168.88px;
-                        height:168.88px;
+                        width:179.88px;
+                        height:179.88px;
                     } 
-                    >.playbutton{
-                        position: absolute;
-                        left:33%;
-                        top:30%;
-                        >.play{
-                            
-                            width:57.5px;
-                            height:57.5px;
-                            >img{
-                                width:57.5px;
-                                height:57.5px;
-                            }
-                        }
-                        >.pause{
-                            display: none;
-                            position: absolute;
-                            width:57.5px;
-                            height:57.5px;
-                            >img{
-                                width:57.5px;
-                                height:57.5px;
-                            }
-                        }
-                    }
-                    >.playbutton.active{
-                        >.pause{
-                            display: block;
-                        }
-                        >.play{
-                            display: none;
-                        }
-                    }
+                    
+ 
                     
                 }
             }
         }
+    }
+    .discWrapper.active{
+        animation-play-state: running;
     }
     .lyricsWrapper{
         height:263.25px;
         width:100%;
         color:white;
         text-align: center;
+        
         h4{
             margin: 10px;
         }
         h6{
-            margin:5px;
+            margin:10px;
+        }
+        .lyrics{
+            height:120px;
+            overflow: hidden;
         }
     }
     .buttonWrapper{
@@ -138,6 +160,7 @@ $designHeight :667;
             height:34px;
             border:1px solid rgb(208, 58, 54);
             border-radius: 17px;
+            margin-bottom:10px;
         }
         #open{
             color:rgb(208, 58, 54);
@@ -158,8 +181,8 @@ $designHeight :667;
     top:0;
     width: 100%;
     height:100%;
-    background: transparent url('http://imgsrc.baidu.com/forum/pic/item/eb7f49d9f2d3572c5b01793f8813632760d0c3a5.jpg')  center repeat-y;
+    background: transparent url('https://i.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg')  center no-repeat;
     filter: blur(10px);
-    background-size: 100%;
+    background-size: cover;
     z-index:-1;
 }

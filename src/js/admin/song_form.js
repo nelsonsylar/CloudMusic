@@ -16,12 +16,15 @@ export default (function song_form(){
                         <label for="">链接</label><input type="text" name="url" value="__url__">
                     </div>
                     <div class="row">
+                        <label for="">歌词</label><textarea name="lyrics" id="" cols="30" rows="10">__lyrics__</textarea>
+                    </div>
+                    <div class="row">
                         <input type="submit">
                     </div>
                 </form>
         `,
         render(data={}){
-            let placeHolders=['song','singer','url']
+            let placeHolders=['song','singer','url','lyrics']
             let html=this.template
             placeHolders.map((value)=>{
                 html = html.replace(`__${value}__`,data[value]||'')
@@ -37,6 +40,7 @@ export default (function song_form(){
             song:"",
             singer:"",
             url:"",
+            lyrics:'',
             id:"",
         },
         set(songData){
@@ -58,6 +62,7 @@ export default (function song_form(){
             todo.set('song', this.data.song);
             todo.set('singer', this.data.singer);
             todo.set('url', this.data.url);
+            todo.set('lyrics', this.data.lyrics);
             // 保存到云端 
             return todo.save().then((response)=>{
                 Object.assign(this.data, Data)
@@ -78,7 +83,7 @@ export default (function song_form(){
         bindEvents(){
             $(this.view.el).on('submit','form',(event)=>{
                 event.preventDefault()
-                let needs='song singer url'.split(' ')
+                let needs='song singer url lyrics'.split(' ')
                 let songData={}
                 needs.map((value)=>{
                     songData[value]=$(this.view.el).find(`[name=${value}]`).val()
