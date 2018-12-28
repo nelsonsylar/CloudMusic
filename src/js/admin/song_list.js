@@ -103,6 +103,14 @@ export default (function song_list(){
             })
 
         },
+        stringMove(string){
+            if(string.value.length>30){
+                let timer = setInterval(()=>{
+                    
+                })
+            }
+            
+        }
 
     }
     controller.init(view,model)

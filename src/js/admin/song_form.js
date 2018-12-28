@@ -16,7 +16,7 @@ export default (function song_form(){
                         <label for="">链接</label><input type="text" name="url" value="__url__">
                     </div>
                     <div class="row">
-                        <label for="">歌词</label><textarea name="lyrics" id="" cols="30" rows="10">__lyrics__</textarea>
+                        <div class=formlyrics><label  for="">歌词</label><textarea name="lyrics" id="" cols="30" rows="10">__lyrics__</textarea></div>
                     </div>
                     <div class="row">
                         <input type="submit">
