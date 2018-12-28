@@ -20,7 +20,8 @@ a {
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
   .player .nav {
     height: 67.5px;
     width: 100%; }
@@ -112,7 +113,7 @@ a {
   .player .discWrapper.active {
     animation-play-state: running; }
   .player .lyricsWrapper {
-    height: 263.25px;
+    height: 253.25px;
     width: 100%;
     color: white;
     text-align: center; }
@@ -122,9 +123,12 @@ a {
       margin: 10px; }
     .player .lyricsWrapper .lyrics {
       height: 120px;
+      color: #999;
       overflow: hidden; }
+    .player .lyricsWrapper .line p.active {
+      color: white; }
   .player .buttonWrapper {
-    height: calc(100% - 601px);
+    height: calc(100% - 591px);
     display: flex;
     align-items: center;
     justify-content: space-around; }
@@ -132,8 +136,7 @@ a {
       width: 144px;
       height: 34px;
       border: 1px solid #d03a36;
-      border-radius: 17px;
-      margin-bottom: 10px; }
+      border-radius: 17px; }
     .player .buttonWrapper #open {
       color: #d03a36;
       outline: none;

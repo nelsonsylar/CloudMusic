@@ -105,7 +105,7 @@ export default (function song_form(){
                         this.model.data.id=""   
                     })  
                 } 
-                
+                window.alert('提交成功')
             })
         },
         eventHub(){

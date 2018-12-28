@@ -1,3 +1,5 @@
+import { Transform } from "stream";
+
 export default (function play(){
     let view={
         el:`.player`,
@@ -55,7 +57,7 @@ export default (function play(){
         <h4>{{song}}</h4>
         <h6>{{singer}}</h6>
         <div class=lyrics>
-            <p>{{lyrics}}</p>
+            <div class=line></div>
         </div>
     </div>
     <div class="buttonWrapper">
@@ -68,11 +70,35 @@ export default (function play(){
                 .replace('{{url}}',data.url)
                 .replace('{{song}}',data.song)
                 .replace('{{singer}}',data.singer)
-                .replace('{{lyrics}}',data.lyrics)
                 )
             
             $(this.el).html($content)
-        }
+        },
+        renderLyrics(element){
+            $(this.el).find('.lyrics>.line').append(element)
+        },
+        showLyric(time){
+            let myP=$(this.el).find('.lyrics>.line>p')
+            let p
+            for(let i=0;i<myP.length;i++){
+                if(i===myP.length-1){
+                    p=myP[i]
+                    break
+                    }else{
+                        let nowTime=myP.eq(i).attr('data-time');
+                        let nextTime=myP.eq(i+1).attr('data-time');
+                        if(time<=nextTime&&time>nowTime){
+                            p=myP[i]
+                            break  
+                    }
+                }  
+            }
+            let pheight=p.getBoundingClientRect().top
+            let lineheight=$(this.el).find('.lyrics>.line')[0].getBoundingClientRect().top
+            let height=pheight-lineheight
+            $(this.el).find('.line').css({transform: `translateY(${- (height-20)}px)`})
+            $(p).addClass('active').siblings().removeClass('active')
+        },
     }
     let model={
         data:{
@@ -96,6 +122,7 @@ export default (function play(){
             let id =this.getId()
             this.model.getSong(id).then(()=>{
                 this.view.render(this.model.data.song)
+                this.getLyrics()
                 this.bindEvents()
             })
             
@@ -141,12 +168,37 @@ export default (function play(){
                         $(this.view.el).find('.discWrapper').removeClass('active')
                     }, false);
                 }
+                audio.ontimeupdate=()=>{
+                    this.view.showLyric(audio.currentTime)
+                }
         },
         play(){
             $(this.view.el).find("audio")[0].play()
         },
         pause(){
             $(this.view.el).find("audio")[0].pause()
+        },
+        getLyrics(){
+            let {lyrics}=this.model.data.song
+            lyrics.split('\n').map((string)=>{
+                let p=document.createElement('p')
+                let regex = /\[([\d:.]+)\](.+)/
+                let matches =string.match(regex)
+                if(matches){
+                    p.textContent = matches[2]
+                    let time = matches[1]
+                    let parts = time.split(':')
+                    let minutes = parts[0]
+                    let seconds = parts[1]
+                    let newTime = parseInt(minutes,10) * 60 + parseFloat(seconds,10)
+                    p.setAttribute('data-time', newTime)
+                }else{
+                    p.textContent = string
+                }
+                this.view.renderLyrics(p)
+            })
+           
+            
         }
     }
     controller.init(view,model)

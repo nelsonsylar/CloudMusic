@@ -16,7 +16,7 @@ $designHeight :667;
     height:100vh;
     z-index: 1;
     text-align: center;
-    
+    overflow: hidden;
     .nav{
         height: 67.5px;
         width:100%;
@@ -134,7 +134,7 @@ $designHeight :667;
         animation-play-state: running;
     }
     .lyricsWrapper{
-        height:263.25px;
+        height:253.25px;
         width:100%;
         color:white;
         text-align: center;
@@ -147,11 +147,20 @@ $designHeight :667;
         }
         .lyrics{
             height:120px;
+            color:#999;
             overflow: hidden;
         }
+        .line{
+            
+            // transition: 0.5s;
+            p.active{
+                color:white;
+            }
+        }
+        
     }
     .buttonWrapper{
-        height:calc(100% - 601px);
+        height:calc(100% - 591px);
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -160,7 +169,7 @@ $designHeight :667;
             height:34px;
             border:1px solid rgb(208, 58, 54);
             border-radius: 17px;
-            margin-bottom:10px;
+            
         }
         #open{
             color:rgb(208, 58, 54);
