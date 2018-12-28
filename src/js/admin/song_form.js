@@ -50,6 +50,7 @@ export default (function song_form(){
                 song: songData.song,
                 singer:songData.singer,
                 url:songData.url,
+                lyrics:songData.lyrics
             }).then(function(submitInfo) {
                 let {id,attributes}=submitInfo  //es6用法,将submitInfo里的id,attributes,赋值给id,attributes
                 Object.assign(this.data,{id, ...attributes})//把后面的对象赋值给前面对象, ...attributes取出为变量
@@ -100,8 +101,8 @@ export default (function song_form(){
                         this.reset()
                         let string=JSON.stringify(this.model.data)
                         let mydata=JSON.parse(string)
-                        window.eventhub.emit("create",mydata)
                         console.log(mydata)
+                        window.eventhub.emit("create",mydata)
                         this.model.data.id=""   
                     })  
                 } 

@@ -180,6 +180,7 @@ export default (function play(){
         },
         getLyrics(){
             let {lyrics}=this.model.data.song
+            if(lyrics){
             lyrics.split('\n').map((string)=>{
                 let p=document.createElement('p')
                 let regex = /\[([\d:.]+)\](.+)/
@@ -195,10 +196,11 @@ export default (function play(){
                 }else{
                     p.textContent = string
                 }
-                this.view.renderLyrics(p)
+                
+                    this.view.renderLyrics(p)
+                
             })
-           
-            
+            }     
         }
     }
     controller.init(view,model)

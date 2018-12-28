@@ -80,7 +80,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #ffbbb1;
+        background: #ddd;
         border-bottom: 1px solid white; }
       body .content-wrapper > aside > .newSong:hover {
         cursor: pointer; }
@@ -91,7 +91,7 @@ body {
         transition: all 0.5s; }
       body .content-wrapper > aside > .songList {
         flex-grow: 1;
-        background: #ffbbb1;
+        background: #ddd;
         border-radius: 0 0 0 10px; }
         body .content-wrapper > aside > .songList > ul {
           max-height: 794px;
@@ -110,14 +110,13 @@ body {
             cursor: pointer; }
           body .content-wrapper > aside > .songList > ul > li.active::after {
             content: '';
-            border-radius: 50%;
             display: block;
-            height: 7px;
+            height: 35px;
             width: 7px;
             background: #c62f2f;
             position: absolute;
             left: 0;
-            top: 17px; }
+            top: 2px; }
           body .content-wrapper > aside > .songList > ul > li.active {
             background: white;
             color: black;

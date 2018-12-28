@@ -78,12 +78,9 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background:rgb(255, 187, 177);
+                background:#ddd;
                 border-bottom:1px solid white;
 
-            }
-            >.newSong::after{
-                
             }
             >.newSong:hover{
                 cursor: pointer;
@@ -97,7 +94,7 @@ body{
             }
             >.songList{
                 flex-grow:1;
-                background: rgb(255, 187, 177);
+                background: #ddd;
                 border-radius:0 0 0 10px ;
                 >ul{    
                     max-height: 794px;
@@ -118,14 +115,14 @@ body{
                     }
                     >li.active::after{
                         content:'';
-                        border-radius:50%;
+                        
                         display: block;
-                        height:7px;
+                        height:35px;
                         width:7px;
                         background: rgb(198,47,47);
                         position: absolute;
                         left:0;
-                        top:17px;
+                        top:2px;
                     }
                     >li.active{
                         background: white;
